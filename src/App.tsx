@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import List from './components/List'
+import AddToList from './components/AddToList';
 
-function getCurrentDT() {
+export function getCurrentDT() {
   let today = new Date()
   let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -17,7 +18,7 @@ function getSmartContractData() {
 }
 
 
-interface IState {
+export interface IState {
   requestedData: {
     time: string
     smartContractData: number
@@ -40,12 +41,16 @@ function App() {
     }
   ])
 
-  
+
 
   return (
     <div className="App">
       <h1>Info retrieved from smart contract:</h1>
       <List requestedData={requestedData}/>
+      <AddToList 
+        requestedData={requestedData} 
+        setRequestedData={setRequestedData}
+      />
     </div>
   );
 }

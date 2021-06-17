@@ -1,13 +1,5 @@
 import React from "react"
-
-
-interface IProps {
-    requestedData: {
-      time: string
-      smartContractData: number
-      note?: string
-    }[]
-  }
+import { IState as IProps } from '../App'
 
 
 const List: React.FC<IProps> = ({ requestedData }) => {

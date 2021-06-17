@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import List from './components/List'
 
 function getCurrentDT() {
   let today = new Date()
@@ -40,13 +41,12 @@ function App() {
 //     }
 // ])
 
-  
+
 
   return (
     <div className="App">
-      <h1>
-        Info retrieved from smart contract:
-      </h1>
+      <h1>Info retrieved from smart contract:</h1>
+      <List requestedData={requestedData}/>
     </div>
   );
 }

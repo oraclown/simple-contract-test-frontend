@@ -11,10 +11,28 @@ interface IProps {
 
 
 const List: React.FC<IProps> = ({ requestedData }) => {
+
+    const renderList = (): JSX.Element[] => {
+        return requestedData.map((data) => {
+            return (
+                <li className='List'>
+                    <p className='List-time'>
+                        { data.time }
+                    </p>
+                    <p className='List-smartContractData'>
+                        { data.smartContractData }
+                    </p>
+                    <p className='List-note'>
+                        { data.note }
+                    </p>
+                </li>
+            )
+        })
+    }
     return (
-        <div>
-            I am a list
-        </div>
+        <ul>
+            { renderList() }
+        </ul>
     )
 }
 

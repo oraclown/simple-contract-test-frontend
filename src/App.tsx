@@ -28,20 +28,19 @@ interface IState {
 
 function App() {
 
-  const [requestedData, setRequestedData] = useState<IState["requestedData"]>([])
-//   const [requestedData, setRequestedData] = useState([
-//     {
-//       time: getCurrentDT(),
-//       smartContractData: getSmartContractData(),
-//       note: "cool, it's working.."
-//     },
-//     {
-//       time: getCurrentDT(),
-//       smartContractData: getSmartContractData(),
-//     }
-// ])
+  const [requestedData, setRequestedData] = useState<IState["requestedData"]>([
+    {
+      time: getCurrentDT(),
+      smartContractData: getSmartContractData(),
+      note: "cool, it's working.."
+    },
+    {
+      time: getCurrentDT(),
+      smartContractData: getSmartContractData(),
+    }
+  ])
 
-
+  
 
   return (
     <div className="App">

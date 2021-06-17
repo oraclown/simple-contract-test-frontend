@@ -1,31 +1,28 @@
 import React from "react"
 import { IState as IProps } from '../App'
+import List from '@material-ui/core/List' 
+import ListItem from '@material-ui/core/ListItem' 
+import ListItemText from '@material-ui/core/ListItemText'
 
 
-const List: React.FC<IProps> = ({ requestedData }) => {
+const CustomList: React.FC<IProps> = ({ requestedData }) => {
 
-    const renderList = (): JSX.Element[] => {
+    const renderList = () => {
         return requestedData.map((data) => {
             return (
-                <li className='List'>
-                    <p className='List-time'>
-                        { data.time }
-                    </p>
-                    <p className='List-smartContractData'>
-                        { data.smartContractData }
-                    </p>
-                    <p className='List-note'>
-                        { data.note }
-                    </p>
-                </li>
+                <ListItem className='ListItem'>
+                    <ListItemText primary={ data.time } className='ListItemText'/>
+                    <ListItemText primary={ data.smartContractData } className='ListItemText'/>
+                    <ListItemText primary={ data.note } className='ListItemText'/>
+                </ListItem>
             )
         })
     }
     return (
-        <ul>
+        <List className='List'>
             { renderList() }
-        </ul>
+        </List>
     )
 }
 
-export default List
+export default CustomList

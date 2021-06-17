@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import List from './components/List'
+import CustomList from './components/List'
 import AddToList from './components/AddToList';
 
 export function getCurrentDT() {
@@ -34,10 +33,6 @@ function App() {
       time: getCurrentDT(),
       smartContractData: getSmartContractData(),
       note: "cool, it's working.."
-    },
-    {
-      time: getCurrentDT(),
-      smartContractData: getSmartContractData(),
     }
   ])
 
@@ -46,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <h1>Info retrieved from smart contract:</h1>
-      <List requestedData={requestedData}/>
+      <CustomList requestedData={requestedData}/>
       <AddToList 
         requestedData={requestedData} 
         setRequestedData={setRequestedData}

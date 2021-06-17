@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { IState as Props, getCurrentDT } from '../App'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 
 
 interface IProps {
@@ -42,19 +44,14 @@ const AddToList: React.FC<IProps> = ({ setRequestedData, requestedData}) => {
 
     return (
         <div className='AddToList'>
-            <textarea 
+            <TextField
                 placeholder='Note'
                 className='AddToList-input'
                 value={input.note}
                 onChange={handleChange}
                 name='note'
             />
-            <button
-                className='AddToList-btn'
-                onClick={handleClick}
-            >
-                Add to list
-            </button>
+            <Button onClick={handleClick}>Add to list</Button>
         </div>
     )
 }
